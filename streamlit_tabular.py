@@ -6,16 +6,20 @@ from scipy.stats import skew
 # Set page title
 st.title('SynthEthic Tabular Pipeline')
 
-# File uploader
-file = st.file_uploader("Choose a CSV file", type="csv")
-if file:
-    df = pd.read_csv(file)
+# List of available datasets
+# dataset_names = ['adult.csv', 'compas.csv', 'german_credit_data.csv', 'titanic.csv']
+dataset_names = ['compas.csv']
+dataset_choice = st.selectbox('Choose a dataset', dataset_names)
+
+# Load the selected dataset
+if dataset_choice:
+    df = pd.read_csv(f"datasets/{dataset_choice}")
     if df is not None:
         st.write('### Preview of Dataset')
         st.dataframe(df.head())
 
         sensitive_attributes = ['Sex', 'Ethnicity', 'MaritalStatus']  # Checklist from the column names
-        target_attributes = 'DecileScore'
+        target_attributes = 'DecileScore'  # Change this based on selected dataset if necessary
 
         class Auditor:
             def __init__(self, df, sensitive_attributes, target_attribute):
