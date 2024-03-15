@@ -11,7 +11,7 @@ import numpy as np
 import pandas as pd
 import seaborn as sns
 from matplotlib.axes import Axes
-from seaborn.categorical import _CountPlotter
+from seaborn.categorical import countplot
 
 from .. import utils
 
@@ -403,7 +403,7 @@ def _countplot(
     elif x is not None and y is not None:
         raise ValueError("Cannot pass values for both `x` and `y`")
 
-    plotter = _CountPlotter(
+    plotter = countplot(
         x=x,
         y=y,
         hue=hue,
