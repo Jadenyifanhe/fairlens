@@ -14,32 +14,32 @@ from typing import Any, Callable, List, Mapping, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
-from scipy.stats import beta, binom_test, brunnermunzel, norm
-
+from scipy.stats import beta, brunnermunzel, norm
+# binom_test
 from .. import utils
 
 
-def binominal_proportion_p_value(p_obs: float, p_null: float, n: int, alternative: str = "two-sided") -> float:
-    """Calculate an exact p-value for an observed binomial proportion of a sample.
+# def binominal_proportion_p_value(p_obs: float, p_null: float, n: int, alternative: str = "two-sided") -> float:
+#     """Calculate an exact p-value for an observed binomial proportion of a sample.
 
-    Args:
-        p_obs (float):
-            Observed proportion of successes.
-        p_null (float):
-            Expected proportion of sucesses under null hypothesis.
-        n (int):
-            Sample size.
-        alternative (str, optional):
-            Indicates the alternative hypothesis. One of "two-sided", "greater", "less".
-            Defaults to "two-sided".
+#     Args:
+#         p_obs (float):
+#             Observed proportion of successes.
+#         p_null (float):
+#             Expected proportion of sucesses under null hypothesis.
+#         n (int):
+#             Sample size.
+#         alternative (str, optional):
+#             Indicates the alternative hypothesis. One of "two-sided", "greater", "less".
+#             Defaults to "two-sided".
 
-    Returns:
-        float:
-            The p-value under the null hypothesis.
-    """
+#     Returns:
+#         float:
+#             The p-value under the null hypothesis.
+#     """
 
-    k = np.ceil(p_obs * n)
-    return binom_test(k, n, p_null, alternative)
+#     k = np.ceil(p_obs * n)
+#     return binom_test(k, n, p_null, alternative)
 
 
 def binominal_proportion_interval(
