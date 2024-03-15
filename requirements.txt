@@ -1,4 +1,4 @@
 -e .
 ctgan
 sdv
-scipy
+scipy==1.11.3
