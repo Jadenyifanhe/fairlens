@@ -85,7 +85,9 @@ if file:
                     if len(underep_df) == 0:
                         min_proportion_index = score_df['Counts'].idxmin()
                         underep_df = score_df.loc[min_proportion_index]
-                    st.write(underep_df['Group'])
+                    # st.write(underep_df['Group'])
+                    underep_communities_df = underep_df[['Group']].reset_index(drop=True)
+                    st.dataframe(underep_communities_df)
 
             def get_worst_combos(self):
                 fair_df = self.get_fairness_df()
