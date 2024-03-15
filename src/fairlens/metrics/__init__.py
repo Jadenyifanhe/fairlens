@@ -29,8 +29,9 @@ from .correlation import (  # isort:skip
 )
 
 from .significance import (  # isort:skip
-    binominal_proportion_p_value,
-    binominal_proportion_interval,
+    # binom_test,
+    # binominal_proportion_p_value,
+    # binominal_proportion_interval,
     bootstrap_binned_statistic,
     bootstrap_statistic,
     permutation_statistic,
