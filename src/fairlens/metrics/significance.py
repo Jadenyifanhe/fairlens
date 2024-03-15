@@ -14,7 +14,7 @@ from typing import Any, Callable, List, Mapping, Optional, Tuple, Union
 
 import numpy as np
 import pandas as pd
-from scipy.stats import beta, binom_test, brunnermunzel, norm
+from scipy.stats import beta, binomtest, brunnermunzel, norm
 
 from .. import utils
 
@@ -39,7 +39,7 @@ def binominal_proportion_p_value(p_obs: float, p_null: float, n: int, alternativ
     """
 
     k = np.ceil(p_obs * n)
-    return binom_test(k, n, p_null, alternative)
+    return binomtest(k, n, p_null, alternative)
 
 
 def binominal_proportion_interval(
