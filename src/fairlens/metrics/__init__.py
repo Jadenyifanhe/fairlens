@@ -29,7 +29,7 @@ from .correlation import (  # isort:skip
 )
 
 from .significance import (  # isort:skip
-    # binom_test,
+    binom_test,
     binominal_proportion_p_value,
     binominal_proportion_interval,
     bootstrap_binned_statistic,
